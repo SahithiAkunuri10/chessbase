@@ -1,31 +1,3 @@
-// import React,{useState} from 'react';
-// import SignupForm from './SignupForm';
- 
-// function SignUpPage() {
-//   return (
-//     <div style={styles.container}>
- 
-//       {/* Register Heading */}
-//       <h2 style={styles.registerHeading}>Register</h2>
- 
-//       <h1 style={styles.heading}>Create your account</h1>
-      
-//       <div style={styles.imageContainer}>
-//         <img
-//           src={`${process.env.PUBLIC_URL}/Chess_img.jpg`}
-//           alt="Chess"
-//           style={styles.chessImage}
-//         />
-//       </div>
-      
-//       <button style={styles.button}>Sign Up with Email</button>
-//       <div style={styles.orContainer}>
-//         <span>OR</span>
-//       </div>
-//       <button style={styles.button}>Continue with Google</button>
-//     </div>
-//   );
-// }
 import React, { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 import SignupForm from './SignupForm';
@@ -49,15 +21,15 @@ const SignUpPage=()=> {
     <div style={styles.container}>
       {/* Register Heading */}
       <h2 style={styles.registerHeading}>Register</h2>
-     <button onclick={handleLoginClick}>LogIn</button>
+     <button onClick={handleLoginClick}>LogIn</button>
       <h1 style={styles.heading}>Create your account</h1>
  
       <div style={styles.imageContainer}>
         <img
-          src={`${process.env.PUBLIC_URL}/Chess_img.jpg`}
+          src="https://img.icons8.com/material-rounded/24/000000/user.png"
           alt="Chess"  
           style={styles.chessImage}
-        />
+        />      
       </div>
  
       {/* Conditionally render the button or the form */}
