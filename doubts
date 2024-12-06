@@ -1,4 +1,4 @@
- <div
+<div
   style={{
     maxWidth: "600px",
     margin: "auto",
@@ -29,20 +29,21 @@
 
   {/* RP Name and Description */}
   <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "12px" }}>
-    <div style={{ width: "45%", position: "relative" }}>
-      {/* Tick Image */}
-      <img
-        src={image} // Replace with the actual image URL
-        alt="tick"
-        style={{
-          position: "absolute",
-          top: "30px",
-          left: "-20px",
-          width: "15px",
-          height: "15px",
-        }}
-      />
-      <label style={{ marginRight: "41px" }}>RP Name</label>
+    {/* RP Name */}
+    <div style={{ width: "45%" }}>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <label style={{ marginRight: "8px" }}>RP Name</label>
+        {/* Tick Image */}
+        <img
+          src={image} // Replace with the actual image URL
+          alt="tick"
+          style={{
+            width: "15px",
+            height: "15px",
+            marginLeft: "8px",
+          }}
+        />
+      </div>
       <input
         type="text"
         name="rpName"
@@ -52,7 +53,7 @@
         }
         placeholder="RP Name as per naming convention"
         style={{
-          width: "61%",
+          width: "100%",
           padding: "6px",
           marginTop: "6px",
           boxSizing: "border-box",
@@ -62,6 +63,8 @@
         Special Characters: Only "_" and "-" allowed.
       </small>
     </div>
+
+    {/* Description */}
     <div style={{ width: "45%" }}>
       <label>Description:</label>
       <input
@@ -73,7 +76,7 @@
         }
         placeholder="Free text (Max: 50)"
         style={{
-          width: "72%",
+          width: "100%",
           padding: "6px",
           marginTop: "6px",
           boxSizing: "border-box",
@@ -83,22 +86,20 @@
   </div>
 
   {/* OP Type */}
-  <div style={{ display: "flex", alignItems: "center", marginBottom: "12px", position: "relative" }}>
-    {/* Tick Image */}
-    <img
-    //  <img className='wizardimg' src={wizardImg} draggable={false} />
-      src={image}
-       // Replace with the actual image URL
-      alt="tick"
-      style={{
-        position: "absolute",
-        top: "30px",
-        left: "-20px",
-        width: "15px",
-        height: "15px",
-      }}
-    />
-    <label style={{ flex: "1", marginRight: "-126px" }}>OP Type</label>
+  <div style={{ display: "flex", alignItems: "center", marginBottom: "12px" }}>
+    <div style={{ flex: "1", display: "flex", alignItems: "center" }}>
+      <label style={{ marginRight: "8px" }}>OP Type</label>
+      {/* Tick Image */}
+      <img
+        src={image} // Replace with the actual image URL
+        alt="tick"
+        style={{
+          width: "15px",
+          height: "15px",
+          marginLeft: "8px",
+        }}
+      />
+    </div>
     <select
       name="opType"
       value={form.opType}
@@ -185,7 +186,4 @@
       Cancel
     </button>
   </div>
-</div>
-</div>
-</div>
 </div>
