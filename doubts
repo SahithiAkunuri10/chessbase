@@ -27,19 +27,19 @@ const App = () => {
   return (
     <div
       style={{
-        maxWidth: "500px",
+        maxWidth: "600px",
         margin: "auto",
         padding: "20px",
         border: "1px solid #ccc",
         borderRadius: "8px",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         fontFamily: "'Arial', sans-serif",
-        overflow: "hidden",
+        backgroundColor: "#f9f9f9",
       }}
     >
-      {/* RP Name and Description in the same row */}
-      <div style={{ display: "flex", gap: "12px", marginBottom: "12px" }}>
-        <div style={{ flex: 1 }}>
+      {/* RP Name and Description */}
+      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "12px" }}>
+        <div style={{ width: "45%" }}>
           <label>RP Name:</label>
           <input
             type="text"
@@ -56,9 +56,11 @@ const App = () => {
               boxSizing: "border-box",
             }}
           />
-          <small>Special Characters: Only "_" and "-" allowed.</small>
+          <small style={{ fontSize: "12px", color: "#555" }}>
+            Special Characters: Only "_" and "-" allowed.
+          </small>
         </div>
-        <div style={{ flex: 1 }}>
+        <div style={{ width: "45%" }}>
           <label>Description:</label>
           <input
             type="text"
@@ -79,16 +81,15 @@ const App = () => {
       </div>
 
       {/* OP Type */}
-      <div style={{ marginBottom: "12px" }}>
-        <label>OP Type:</label>
+      <div style={{ display: "flex", alignItems: "center", marginBottom: "12px" }}>
+        <label style={{ flex: "1", marginRight: "12px" }}>OP Type:</label>
         <select
           name="opType"
           value={form.opType}
           onChange={handleChange}
           style={{
-            width: "100%",
+            flex: "2",
             padding: "6px",
-            marginTop: "6px",
             boxSizing: "border-box",
           }}
         >
@@ -100,8 +101,8 @@ const App = () => {
       </div>
 
       {/* Dependency */}
-      <div style={{ marginBottom: "12px" }}>
-        <label>Dependency:</label>
+      <div style={{ display: "flex", alignItems: "center", marginBottom: "12px" }}>
+        <label style={{ flex: "1", marginRight: "12px" }}>Dependency:</label>
         <input
           type="text"
           name="dependency"
@@ -110,9 +111,8 @@ const App = () => {
           disabled
           placeholder="Disabled"
           style={{
-            width: "100%",
+            flex: "2",
             padding: "6px",
-            marginTop: "6px",
             backgroundColor: "#f5f5f5",
             boxSizing: "border-box",
           }}
@@ -120,8 +120,8 @@ const App = () => {
       </div>
 
       {/* Notes */}
-      <div style={{ marginBottom: "12px" }}>
-        <label>Notes:</label>
+      <div style={{ display: "flex", alignItems: "center", marginBottom: "12px" }}>
+        <label style={{ flex: "1", marginRight: "12px" }}>Notes:</label>
         <textarea
           name="notes"
           value={form.notes}
@@ -130,9 +130,8 @@ const App = () => {
           }
           placeholder="Notes (Max: 255)"
           style={{
-            width: "100%",
+            flex: "2",
             padding: "6px",
-            marginTop: "6px",
             boxSizing: "border-box",
           }}
           rows={3}
@@ -140,25 +139,26 @@ const App = () => {
       </div>
 
       {/* Buttons */}
-      <div style={{ textAlign: "center" }}>
+      <div style={{ display: "flex", justifyContent: "center", gap: "12px", marginTop: "16px" }}>
         <button
           onClick={handleSubmit}
           style={{
-            padding: "8px 16px",
+            padding: "10px 20px",
             backgroundColor: "#4CAF50",
             color: "white",
             border: "none",
             borderRadius: "4px",
             cursor: "pointer",
-            marginRight: "8px",
           }}
         >
           OK
         </button>
         <button
-          onClick={() => setForm({ rpName: "", opType: "", description: "", dependency: "", notes: "" })}
+          onClick={() =>
+            setForm({ rpName: "", opType: "", description: "", dependency: "", notes: "" })
+          }
           style={{
-            padding: "8px 16px",
+            padding: "10px 20px",
             backgroundColor: "#f44336",
             color: "white",
             border: "none",
