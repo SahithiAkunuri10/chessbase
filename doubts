@@ -27,19 +27,18 @@ const App = () => {
   return (
     <div
       style={{
-        maxWidth: "600px",
+        maxWidth: "500px",
         margin: "auto",
         padding: "20px",
         border: "1px solid #ccc",
         borderRadius: "8px",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         fontFamily: "'Arial', sans-serif",
+        overflow: "hidden",
       }}
     >
-      <h2 style={{ textAlign: "center" }}>Sample Form</h2>
-
       {/* RP Name and Description in the same row */}
-      <div style={{ display: "flex", gap: "16px", marginBottom: "16px" }}>
+      <div style={{ display: "flex", gap: "12px", marginBottom: "12px" }}>
         <div style={{ flex: 1 }}>
           <label>RP Name:</label>
           <input
@@ -52,8 +51,8 @@ const App = () => {
             placeholder="RP Name (Max: 50)"
             style={{
               width: "100%",
-              padding: "8px",
-              marginTop: "8px",
+              padding: "6px",
+              marginTop: "6px",
               boxSizing: "border-box",
             }}
           />
@@ -71,8 +70,8 @@ const App = () => {
             placeholder="Description (Max: 50)"
             style={{
               width: "100%",
-              padding: "8px",
-              marginTop: "8px",
+              padding: "6px",
+              marginTop: "6px",
               boxSizing: "border-box",
             }}
           />
@@ -80,7 +79,7 @@ const App = () => {
       </div>
 
       {/* OP Type */}
-      <div style={{ marginBottom: "16px" }}>
+      <div style={{ marginBottom: "12px" }}>
         <label>OP Type:</label>
         <select
           name="opType"
@@ -88,8 +87,8 @@ const App = () => {
           onChange={handleChange}
           style={{
             width: "100%",
-            padding: "8px",
-            marginTop: "8px",
+            padding: "6px",
+            marginTop: "6px",
             boxSizing: "border-box",
           }}
         >
@@ -101,7 +100,7 @@ const App = () => {
       </div>
 
       {/* Dependency */}
-      <div style={{ marginBottom: "16px" }}>
+      <div style={{ marginBottom: "12px" }}>
         <label>Dependency:</label>
         <input
           type="text"
@@ -112,8 +111,8 @@ const App = () => {
           placeholder="Disabled"
           style={{
             width: "100%",
-            padding: "8px",
-            marginTop: "8px",
+            padding: "6px",
+            marginTop: "6px",
             backgroundColor: "#f5f5f5",
             boxSizing: "border-box",
           }}
@@ -121,7 +120,7 @@ const App = () => {
       </div>
 
       {/* Notes */}
-      <div style={{ marginBottom: "16px" }}>
+      <div style={{ marginBottom: "12px" }}>
         <label>Notes:</label>
         <textarea
           name="notes"
@@ -132,8 +131,8 @@ const App = () => {
           placeholder="Notes (Max: 255)"
           style={{
             width: "100%",
-            padding: "8px",
-            marginTop: "8px",
+            padding: "6px",
+            marginTop: "6px",
             boxSizing: "border-box",
           }}
           rows={3}
