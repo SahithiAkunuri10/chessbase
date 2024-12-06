@@ -1,31 +1,4 @@
-import React, { useState } from "react";
-
-const App = () => {
-  const [form, setForm] = useState({
-    rpName: "",
-    opType: "",
-    description: "",
-    dependency: "",
-    notes: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
-
-  const validateRpName = (value) =>
-    /^[a-zA-Z0-9-_]{0,50}$/.test(value) || value === "";
-
-  const validateDescription = (value) => value.length <= 50;
-  const validateNotes = (value) => value.length <= 255;
-
-  const handleSubmit = () => {
-    console.log("Form Data:", form);
-  };
-
-  return (
-    <div
+<div
       style={{
         maxWidth: "600px",
         margin: "auto",
@@ -40,7 +13,7 @@ const App = () => {
       {/* RP Name and Description */}
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "12px" }}>
         <div style={{ width: "45%" }}>
-          <label>RP Name:</label>
+          <label style={{marginRight:"41px"}}>RP Name</label>
           <input
             type="text"
             name="rpName"
@@ -50,7 +23,7 @@ const App = () => {
             }
             placeholder="RP Name (Max: 50)"
             style={{
-              width: "100%",
+              width: "61%",
               padding: "6px",
               marginTop: "6px",
               boxSizing: "border-box",
@@ -71,7 +44,7 @@ const App = () => {
             }
             placeholder="Description (Max: 50)"
             style={{
-              width: "100%",
+              width: "72%",
               padding: "6px",
               marginTop: "6px",
               boxSizing: "border-box",
@@ -82,7 +55,7 @@ const App = () => {
 
       {/* OP Type */}
       <div style={{ display: "flex", alignItems: "center", marginBottom: "12px" }}>
-        <label style={{ flex: "1", marginRight: "12px" }}>OP Type:</label>
+        <label style={{ flex: "1", marginRight: "-126px" }}>OP Type</label>
         <select
           name="opType"
           value={form.opType}
@@ -102,7 +75,7 @@ const App = () => {
 
       {/* Dependency */}
       <div style={{ display: "flex", alignItems: "center", marginBottom: "12px" }}>
-        <label style={{ flex: "1", marginRight: "12px" }}>Dependency:</label>
+        <label style={{ flex: "1", marginRight: "-125px" }}>Dependency</label>
         <input
           type="text"
           name="dependency"
@@ -121,14 +94,14 @@ const App = () => {
 
       {/* Notes */}
       <div style={{ display: "flex", alignItems: "center", marginBottom: "12px" }}>
-        <label style={{ flex: "1", marginRight: "12px" }}>Notes:</label>
+        <label style={{ flex: "1", marginRight: "-125px" }}>Notes</label>
         <textarea
           name="notes"
           value={form.notes}
           onChange={(e) =>
             validateNotes(e.target.value) && handleChange(e)
           }
-          placeholder="Notes (Max: 255)"
+          placeholder="Please add Notes if required"
           style={{
             flex: "2",
             padding: "6px",
@@ -170,7 +143,6 @@ const App = () => {
         </button>
       </div>
     </div>
-  );
-};
-
-export default App;
+                </div>
+            </div>
+        </div>
