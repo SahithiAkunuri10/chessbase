@@ -1,4 +1,4 @@
-<div
+ <div
   style={{
     maxWidth: "600px",
     margin: "auto",
@@ -15,7 +15,7 @@
   <div
     style={{
       position: "absolute",
-      top: "10px",
+      top: "-10px",
       right: "10px",
       fontWeight: "bold",
       padding: "8px",
@@ -32,7 +32,7 @@
     <div style={{ width: "45%", position: "relative" }}>
       {/* Tick Image */}
       <img
-        src="tick-image-url" // Replace with the actual image URL
+        src={image} // Replace with the actual image URL
         alt="tick"
         style={{
           position: "absolute",
@@ -50,7 +50,7 @@
         onChange={(e) =>
           validateRpName(e.target.value) && handleChange(e)
         }
-        placeholder="RP Name (Max: 50)"
+        placeholder="RP Name as per naming convention"
         style={{
           width: "61%",
           padding: "6px",
@@ -71,7 +71,7 @@
         onChange={(e) =>
           validateDescription(e.target.value) && handleChange(e)
         }
-        placeholder="Description (Max: 50)"
+        placeholder="Free text (Max: 50)"
         style={{
           width: "72%",
           padding: "6px",
@@ -86,7 +86,9 @@
   <div style={{ display: "flex", alignItems: "center", marginBottom: "12px", position: "relative" }}>
     {/* Tick Image */}
     <img
-      src="tick-image-url" // Replace with the actual image URL
+    //  <img className='wizardimg' src={wizardImg} draggable={false} />
+      src={image}
+       // Replace with the actual image URL
       alt="tick"
       style={{
         position: "absolute",
@@ -183,4 +185,7 @@
       Cancel
     </button>
   </div>
+</div>
+</div>
+</div>
 </div>
