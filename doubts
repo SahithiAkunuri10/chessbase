@@ -1,36 +1,179 @@
- <div
+<div>
+      <div
+        style={{
+          maxWidth: "600px",
+          margin: "auto",
+          padding: "20px",
+          border: "1px solid #ccc",
+          borderRadius: "8px",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+          fontFamily: "'Arial', sans-serif",
+          backgroundColor: "#f9f9f9",
+          position: "relative",
+        }}
+      >
+        <div
           style={{
-            position: "fixed",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-199%, -63%)",
-            backgroundColor: "#fff",
-            padding: "20px",
-            borderRadius: "8px",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-            zIndex: 1000,
+            position: "absolute",
+            top: "-10px",
+            right: "10px",
+            fontWeight: "bold",
+            padding: "8px",
+            border: "1px solid #ccc",
+            borderRadius: "4px",
+            backgroundColor: "#ffffff",
           }}
         >
-          <h3>Roading Plan Naming Convention</h3>
-          <p>Details of naming convention can go here...</p>
-          <button
-            onClick={handleCloseAlert}
+          RP2024-0090
+        </div>
+ 
+        {/* RP Name and Description Row */}
+        <div style={{ display: "flex", alignItems: "center", marginBottom: "12px", gap: "16px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <label>RP Name</label>
+            <img
+              src={image} // Replace with the actual image URL
+              alt="tick"
+              onClick={handleFirstImageClick}
+              style={{
+                width: "15px",
+                height: "15px",
+                cursor: "pointer",
+              }}
+            />
+            <input
+              type="text"
+              name="rpName"
+              value={form.rpName}
+              onChange={handleChange}
+              placeholder="RP Name as per naming convention"
+              style={{
+                padding: "6px",
+                boxSizing: "border-box",
+                width: "180px",
+              }}
+            />
+          </div>
+ 
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <label>Description:</label>
+            <input
+              type="text"
+              name="description"
+              value={form.description}
+              onChange={handleChange}
+              placeholder="Free text (Max: 50)"
+              style={{
+                padding: "6px",
+                boxSizing: "border-box",
+                width: "180px",
+              }}
+            />
+          </div>
+        </div>
+ 
+        {/* OP Type */}
+        <div style={{ display: "flex", alignItems: "center", marginBottom: "12px"}}>
+          <div style={{ flex: "1", display: "flex", alignItems: "center", gap: "8px" }}>
+            <label>OP Type</label>
+            <img
+              src={image} // Replace with the actual image URL
+              alt="tick"
+              onClick={handleSecondImageClick}
+              style={{
+                width: "15px",
+                height: "15px",
+                cursor: "pointer",
+              }}
+            />
+          </div>
+          <select
+            name="opType"
+            value={form.opType}
+            onChange={handleChange}
             style={{
-              padding: "10px",
+              flex: "2",
+              padding: "6px",
+              boxSizing: "border-box",
+            }}
+          >
+            <option value="">Select OP Type</option>
+            <option value="Type1">Type 1</option>
+            <option value="Type2">Type 2</option>
+            <option value="Type3">Type 3</option>
+          </select>
+        </div>
+ 
+        {/* Dependency */}
+        <div style={{ display: "flex", alignItems: "center", marginBottom: "12px" }}>
+          <label style={{ flex: "1" }}>Dependency</label>
+          <input
+            type="text"
+            name="dependency"
+            value={form.dependency}
+            onChange={handleChange}
+            disabled
+            placeholder="Disabled"
+            style={{
+              flex: "2",
+              padding: "6px",
+              backgroundColor: "#f5f5f5",
+              boxSizing: "border-box",
+            }}
+          />
+        </div>
+ 
+        {/* Notes */}
+        <div style={{ display: "flex", alignItems: "center", marginBottom: "12px" }}>
+          <label style={{ flex: "1" }}>Notes</label>
+          <textarea
+            name="notes"
+            value={form.notes}
+            onChange={handleChange}
+            placeholder="Please add notes if required"
+            style={{
+              flex: "2",
+              padding: "6px",
+              boxSizing: "border-box",
+            }}
+            rows={3}
+          />
+        </div>
+ 
+        {/* Buttons */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "12px",
+            marginTop: "16px",
+          }}
+        >
+          <button
+            onClick={() => alert("Submit functionality")}
+            style={{
+              padding: "10px 20px",
               backgroundColor: "#4CAF50",
               color: "white",
               border: "none",
               borderRadius: "4px",
               cursor: "pointer",
-              marginRight: "8px",
             }}
           >
             OK
           </button>
           <button
-            onClick={handleCloseAlert}
+            onClick={() =>
+              setForm({
+                rpName: "",
+                opType: "",
+                description: "",
+                dependency: "",
+                notes: "",
+              })
+            }
             style={{
-              padding: "10px",
+              padding: "10px 20px",
               backgroundColor: "#f44336",
               color: "white",
               border: "none",
@@ -41,3 +184,215 @@
             Cancel
           </button>
         </div>
+      </div>
+ 
+      {/* Alert Box 1 */}
+      {showFirstAlert && (
+        <div
+        style={{
+          position: "fixed",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-165%, -50%)",
+          width: "60%",
+          maxWidth:"600px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+          zIndex: 1000,
+          overflow: "hidden",
+        }}
+      >
+        {/* Header */}
+        <div
+          style={{
+            backgroundColor: "green",
+            color: "white",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            padding: "10px",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <img
+              src="your-image-url" // Replace with your image URL
+              alt="Icon"
+              style={{ width: "24px", height: "24px", marginRight: "10px" }}
+            />
+            <h3 style={{ margin: 0 }}>Roading Plan Naming Convention</h3>
+          </div>
+          <button
+            onClick={handleCloseAlert}
+            style={{
+              backgroundColor: "transparent",
+              border: "none",
+              color: "white",
+              fontSize: "20px",
+              cursor: "pointer",
+            }}
+          >
+            X
+          </button>
+        </div>
+       
+        {/* Content */}
+        <div
+          style={{
+            backgroundColor: "white",
+            color: "black",
+            padding: "15px",
+            maxHeight:"70vh",
+            overflowY:"auto",
+          }}
+        >
+          <p>
+            Format: 'r' + 'RDFS' + 'YY' + Operation Code + '_' + 'Description'
+            <br />
+            e.g., rABCC24RO_Mudflap Swamp
+          </p>
+          <p>
+            <strong>'r'</strong> indicates this is a roading plan.
+            <br />
+            <strong>'RDFS'</strong> is 4 characters representing the Forest Section,
+            e.g., 'ABCC'.
+            <br />
+            <strong>'YY'</strong> is the last 2 digits of the Year, e.g., '24'.
+          </p>
+          <p>
+            <strong>Operation Code</strong> values are:
+            <br />
+            - RC (derived from a 'Clearfall' plan)
+            <br />
+            - RT (derived from a 'Thinning' plan)
+            <br />
+            - RE (Early Clearfall/Salvage)
+            <br />
+            - RS (Strategic Roads)
+            <br />
+            - RQ (Quarry)
+            <br />
+            - RV (derived from a 'Silviculture' or 'Operations' plan)
+            <br />
+            - RF (Fire Break)
+            <br />
+            - RO (Other Roading Plan)
+          </p>
+          <p>
+            <strong>'_'</strong> is an Underscore.
+            <br />
+            <strong>'Description'</strong> can be anything (Max 40 characters in
+            length), such as a location or common name for the area.
+          </p>
+        </div>
+       
+        {/* Footer */}
+        <div
+          style={{
+            backgroundColor: "gray",
+            padding: "10px 20px",
+            display: "flex",
+            justifyContent: "flex-end",
+            // alignItems: "center",
+          }}
+        >
+          <button
+            onClick={handleCloseAlert}
+            style={{
+              padding: "10px 20px",
+              backgroundColor: "skyblue",
+              color: "black",
+              border: "none",
+              borderRadius: "4px",
+              cursor: "pointer",
+            }}
+          >
+            OK
+          </button>
+        </div>
+      </div>
+      )}
+ 
+      {/* Alert Box 2 */}
+      {showSecondAlert && (
+        <div
+          style={{
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-199%, -50%)",
+            width: "300px",
+            backgroundColor: "#fff",
+            borderRadius: "8px",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+            fontFamily: "'Arial', sans-serif",
+            zIndex: 1000,
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              padding: "10px 15px",
+              backgroundColor: "green",
+              color: "white",
+              borderTopLeftRadius: "8px",
+              borderTopRightRadius: "8px",
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <img
+                src={"header-icon-url"}
+                alt="Icon"
+                style={{ width: "20px", height: "20px" }}
+              />
+              <span style={{ fontSize: "16px", fontWeight: "bold" }}>
+                Roading Operations
+              </span>
+            </div>
+            <img
+              src={"close-icon-url"}
+              alt="Close"
+              onClick={handleCloseAlert}
+              style={{
+                width: "20px",
+                height: "20px",
+                cursor: "pointer",
+              }}
+            />
+          </div>
+          <div style={{ padding: "20px", color: "black" }}>
+            <p>Please choose from one of the Operation Types below:</p>
+            <ul>
+              <li>'Clearfall' ... Roading plan is derived from 'Harvesting Clearfall' plan</li>
+              <li>'Thinning' ... Roading plan is derived from 'Harvesting Thinning' plan</li>
+              <li>'Early Clearfall' ...for Early Clearfall or Salvage plans</li>
+              <li>'Strategic' ... for Strategic Roads</li>
+              <li>'Quarry' ... for Quarru plans</li>
+              <li>'Silviculture' ...Roading plan is derived from a 'Silviculture' or 'Operations' plan</li>
+              <li>'Fire Break' ...for Fire Break plans</li>
+              <li>or</li>
+              <li>'Other' ...For all other Road Plans (this is the default)</li>
+            </ul>
+          </div>
+          <div style={{ display: "flex", justifyContent: "flex-end", padding: "10px" }}>
+            <button
+              onClick={handleCloseAlert}
+              style={{
+                padding: "8px 20px",
+                backgroundColor: "green",
+                color: "white",
+                border: "none",
+                borderRadius: "4px",
+                cursor: "pointer",
+              }}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+    </div>
+    </div>
+    </div>
